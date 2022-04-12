@@ -1,0 +1,48 @@
+Biostatistics Program and Research
+At department of Statistics
+
+People
+	Faculty
+		Person A - like rice economics
+			Opening Statement
+			Links - CV, personal site, Google Scholar
+			Contact info
+			Recent publications
+	Students
+		Pic
+		Name
+		FSU email
+		linkedin - optional but recommended
+		CV - optional but recommended
+	Alumni - Automatic Export
+		Pic
+		Name
+		linkedin - optional but recommended
+Education
+	MS
+		Program - Division message/statement requirements, time to ...., 
+			Financial support
+			Rice has a good page
+		Admisssions
+		Course master-list
+		Contact us
+	PhD
+		Program - requirements, time to ....
+			Financial support
+		Admisssions - procedure
+		Course master-list
+		Contacts us
+	
+Research
+	mimic rice university but minimal paragraphs
+
+Announcements - Feed - find examples online(texas A&M, rice statistics)
+	News/Accomplishments/grants and prizes/Conferences
+	Our stories
+	
+Software
+	Developed softwares - external links
+	
+	
+
+

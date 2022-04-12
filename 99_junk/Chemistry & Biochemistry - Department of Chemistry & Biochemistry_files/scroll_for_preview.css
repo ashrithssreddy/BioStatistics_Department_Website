@@ -1,0 +1,13 @@
+/* 
+    Created on : 19.09.2014, 09:39:51
+    Author     : Станимир | OneTwoWeb 
+*/
+
+.otw_live_preview_shortcode {
+    overflow-y : scroll;
+    overflow-x : auto;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    height: 90%;
+    width: 99%;
+}

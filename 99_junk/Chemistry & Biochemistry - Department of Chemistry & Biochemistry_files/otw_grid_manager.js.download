@@ -1,0 +1,669 @@
+jQuery(document).ready(function () {
+	/* row height */
+	otw_set_row_height();
+	
+	/* row sterch */
+	otw_set_row_stretch();
+	
+	/* row background image */
+	otw_set_row_background_image();
+	
+	/* row background video */
+	otw_set_row_background_video();
+	
+	/* row background yt video */
+	otw_set_row_background_yt_video( 1 );
+	
+	/* row background yt video */
+	otw_set_row_background_vm_video( 1 );
+	
+	/* row background color */
+	otw_set_row_background_color();
+	
+	/*row paddings*/
+	otw_set_row_paddings();
+	
+	/*row parallax*/
+	otw_set_row_parallax();
+	
+	/*set background filter*/
+	otw_set_row_background_filter();
+	
+	jQuery( window ).resize( function(){
+		otw_set_row_height();
+		otw_set_row_stretch();
+	} );
+	if( typeof( jQuery( window ).imagesLoaded ) == 'function' ){
+		jQuery( window ).imagesLoaded( function(){
+			otw_set_row_height();
+		} );
+	}
+	setTimeout( function(){
+		otw_set_row_height();
+	}, 500 );
+
+});
+function otw_set_row_height(){
+	
+	var otw_height_elements = jQuery( '.otw-row[data-otwrowheight^="full_"]:first' );
+	
+	if( otw_height_elements.size() ){
+		
+		otw_height_elements.each( function(){
+			
+			var row_object = jQuery( this );
+			
+			row_object.css( 'min-height', '' );
+			row_object.find( '.otw_row_full_height_middle' ).remove();
+			
+			var initial_height = row_object.height();
+			
+			if( row_object.attr( 'data-otwrowheight' ).match( /^full\_/ ) ){
+				
+				var window_height = jQuery( window ).height();
+				var offset_top = row_object.offset().top;
+				
+				if( offset_top < window_height ){
+					var full_height = 100 - offset_top / ( window_height / 100 );
+					row_object.css( 'min-height', full_height + 'vh' );
+				};
+			}
+			
+			if( row_object.attr( 'data-otwrowheight' ) == 'full_middle' ){
+				
+				var item_height = row_object.height();
+				if( item_height > initial_height ){
+					
+					var row_full_height = row_object.find( '.otw_row_full_height_middle' );
+					
+					if( !row_full_height.size() ){
+						row_full_height = jQuery( '<div>' ).addClass( 'otw_row_full_height_middle' )
+					}
+					row_full_height.height( ( item_height / 2 ) - ( initial_height / 2 ) ).prependTo( row_object );
+				};
+			};
+			if( row_object.attr( 'data-otwrowheight' ) == 'full_bottom' ){
+				
+				var item_height = row_object.height();
+				if( item_height > initial_height ){
+					
+					var row_full_height = row_object.find( '.otw_row_full_height_middle' );
+					
+					if( !row_full_height.size() ){
+						row_full_height = jQuery( '<div>' ).addClass( 'otw_row_full_height_middle' )
+					}
+					
+					row_full_height.height( item_height - initial_height ).prependTo( row_object );
+				};
+			};
+			
+			
+		});
+	};
+	
+};
+function otw_set_row_stretch(){
+	
+	var otw_stretch_elements = jQuery( '.otw-row[data-otwrowstretch^="stretch_"]' );
+	
+	if( otw_stretch_elements.size() ){
+		
+		otw_stretch_elements.each( function(){
+			
+			var row_object = jQuery( this );
+			
+			row_object.css( 'left', '' );
+			row_object.css( 'max-width', '' );
+			row_object.css( 'width', '' );
+			
+			switch( row_object.attr( 'data-otwrowstretch' ) ){
+				case 'stretch_r':
+						row_object.css( 'padding-left', '' );
+						row_object.css( 'padding-right', '' );
+					break;
+			}
+			
+			var initial_left = row_object.offset().left;
+			var initial_width = row_object.width();
+			
+			row_object.css( 'box-sizing', 'border-box');
+			row_object.css( 'position', 'relative');
+			row_object.css( 'left', '-' + initial_left + 'px' );
+			row_object.css( 'max-width', jQuery( window ).width() + 'px' );
+			row_object.css( 'width', jQuery( window ).width() + 'px' );
+			
+			switch( row_object.attr( 'data-otwrowstretch' ) ){
+			
+				case 'stretch_r':
+						row_object.css( 'padding-left', initial_left + 'px' );
+						row_object.css( 'padding-right', ( jQuery( window ).width() - ( initial_left + initial_width ) ) + 'px' );
+					break;
+				case 'stretch_rc':
+						
+					break;
+				case 'stretch_rcnp':
+						row_object.find( '>.otw-columns' ).css( 'padding', 0 );
+					break;
+			};
+			
+		});
+	};
+};
+
+function otw_set_row_background_image(){
+
+	var otw_bgimage_elements = jQuery( '.otw-row[data-otwrowbgimage]' );
+	
+	if( otw_bgimage_elements.size() ){
+		
+		otw_bgimage_elements.each( function(){
+			
+			var row_object = jQuery( this );
+			
+			row_object.css( 'position', 'relative' );
+			
+			row_object.find( '.otw_row_bg_image' ).remove();
+			
+			var bgNode = row_object.find( '.otw_row_bg_image' );
+			
+			if( !bgNode.size() ){
+				bgNode = jQuery( '<div class="otw_row_bg_image"></div>' );
+				
+				row_object.append( bgNode );
+			}
+			
+			bgNode.css( 'background-image', 'url(' + row_object.attr( 'data-otwrowbgimage') + ')' );
+			bgNode.css( 'position', 'absolute' );
+			bgNode.css( 'height', '100%' );
+			bgNode.css( 'width', '100%' );
+			bgNode.css( 'top', '0' );
+			bgNode.css( 'left', '0' );
+			
+			if( row_object.attr( 'data-otwrowbgimagesize' ) ){
+				bgNode.css( 'background-size', row_object.attr( 'data-otwrowbgimagesize' ) );
+			}else{
+				bgNode.css( 'background-size', 'auto' );
+			}
+			
+			
+			row_object.find( '> .otw-columns' ).css( 'z-index', 3 );
+			
+		});
+	};
+};
+
+function otw_set_row_background_color(){
+
+	var otw_bgcolor_elements = jQuery( '.otw-row[data-otwrowbgcolor]' );
+	
+	if( otw_bgcolor_elements.size() ){
+		
+		otw_bgcolor_elements.each( function(){
+			
+			var row_object = jQuery( this );
+			
+			row_object.css( 'position', 'relative' );
+			
+			var bgNode = row_object.find( '.otw_row_bg_color' );
+			
+			if( !bgNode.size() ){
+				bgNode = jQuery( '<div class="otw_row_bg_color"></div>' );
+				
+				row_object.append( bgNode );
+			}
+			/*bgNode.css( 'background-color',  row_object.attr( 'data-otwrowbgcolor') );*/
+			bgNode.css( 'position', 'absolute' );
+			bgNode.css( 'height', '100%' );
+			bgNode.css( 'width', '100%' );
+			bgNode.css( 'top', '0' );
+			bgNode.css( 'left', '0' );
+			
+			row_object.find( '> .otw-columns' ).css( 'z-index', 3 );
+		});
+	};
+};
+
+function otw_set_row_background_vm_video( counter ){
+	
+	var otw_bgvideo_elements = jQuery( '.otw-row[data-otwrowbgvmvideo]' );
+	
+	if( otw_bgvideo_elements.size() ){
+		
+		if( 'undefined' === typeof( Froogaloop ) ){
+			
+			if( counter < 100 ){
+				setTimeout( function(){
+					otw_set_row_background_vm_video( counter + 1 );
+				}, 200 );
+			}
+		}else{
+			otw_bgvideo_elements.each( function(){
+			
+				var row_object = jQuery( this );
+				
+				var sound = 0;
+				
+				if( row_object.attr( 'data-otwrowbgvideosound' ) == '1' ){
+					sound = 1;
+				}
+				
+				if( sound == 0 ){
+				
+					var iframe = row_object.find( '.otw_row_bg_video > iframe' )[0];
+					
+					var player = $f( iframe );
+					
+					player.addEvent('ready', function() {
+					    
+						player.api('setVolume', 0);
+					});
+				};
+				
+				row_object.find( '> .otw-columns' ).css( 'z-index', 3 );
+				
+				row_object.css( 'position', 'relative' );
+				
+				row_object.css( 'overflow', 'hidden' );
+				
+				otw_background_video_resize();
+				
+				row_object.imagesLoaded( function(){
+					otw_background_video_resize();
+				} );
+			});
+		};
+		jQuery( window ).bind( 'resize', function () {
+			otw_background_video_resize();
+		});
+	};
+};
+
+function otw_set_row_background_yt_video( counter ){
+
+	var otw_bgvideo_elements = jQuery( '.otw-row[data-otwrowbgytvideo]' );
+	
+	if( otw_bgvideo_elements.size() ){
+		
+		if( 'undefined' === typeof( YT.Player ) ){
+			
+			if( counter < 100 ){
+				setTimeout( function(){
+					otw_set_row_background_yt_video( counter + 1 );
+				}, 200 );
+			}
+		}else{
+			otw_bgvideo_elements.each( function(){
+				
+				var row_object = jQuery( this );
+				
+				row_object.css( 'position', 'relative' );
+				
+				row_object.css( 'overflow', 'hidden' );
+				
+				var video_node = row_object.find( '.otw_row_bg_video > div' );
+				
+				var youtubeId = row_object.attr( 'data-otwrowbgytvideo' );
+				
+				var sound = 0;
+				
+				if( row_object.attr( 'data-otwrowbgvideosound' ) == '1' ){
+					sound = 1;
+				}
+				
+				var quality = 'auto';
+				
+				if( row_object.attr( 'data-otwrowbgvideoquality' ) ){
+					quality = row_object.attr( 'data-otwrowbgvideoquality' );
+				}
+				
+				var repeat = 1;
+				
+				if( row_object.attr( 'data-otwrowbgvideorepeat' ) && row_object.attr( 'data-otwrowbgvideorepeat' ) == 'no' ){
+					repeat = 0;
+				}
+				
+				var video_player_width = '100%';
+				var video_player_height = '100%';
+				
+				if( row_object.find( '.otw_row_bg_video:first' ).attr( 'data-orwidth' ) ){
+					video_player_width = row_object.find( '.otw_row_bg_video:first' ).attr( 'data-orwidth' );
+				}
+				if( row_object.find( '.otw_row_bg_video:first' ).attr( 'data-orheight' ) ){
+					video_player_height = row_object.find( '.otw_row_bg_video:first' ).attr( 'data-orheight' );
+				}
+				
+				var yt_player_params = {
+					iv_load_policy: 3, // hide annotations
+					enablejsapi: 1,
+					disablekb: 1,
+					autoplay: 1,
+					controls: 0,
+					showinfo: 0,
+					rel: 0,
+					loop: repeat,
+					suggestedQuality: quality
+				}
+				
+				if( repeat ){
+					yt_player_params.playlist = youtubeId;
+				};
+				
+				new YT.Player( video_node[ 0 ], {
+					width: video_player_width,
+					height: video_player_height,
+					videoId: youtubeId,
+					playerVars: yt_player_params,
+					events: {
+						onReady: function ( event ) {
+							
+							if( sound ){
+								event.target.setLoop( repeat );
+							}else{
+								event.target.mute().setLoop( repeat );
+							}
+							
+							event.target.setPlaybackQuality( quality );
+							
+							otw_background_video_resize();
+						},
+						onStateChange: function( event ){
+							
+							if( event.data == YT.PlayerState.PLAYING ){
+								event.target.setPlaybackQuality( quality );
+							}
+						}
+					}
+				} );
+				row_object.find( '> .otw-columns' ).css( 'z-index', 3 );
+				otw_background_video_resize();
+				
+			});
+		}
+		
+		jQuery( window ).bind( 'resize', function () {
+			otw_background_video_resize();
+		});
+		
+	};
+};
+function otw_set_row_background_video(){
+
+	var otw_bgvideo_elements = jQuery( '.otw-row[data-otwrowbgvideo]' );
+	
+	if( otw_bgvideo_elements.size() ){
+		
+		otw_bgvideo_elements.each( function(){
+			
+			var row_object = jQuery( this );
+			
+			row_object.find( '> .otw-columns' ).css( 'z-index', 3 );
+			
+			row_object.css( 'position', 'relative' );
+			
+			row_object.css( 'overflow', 'hidden' );
+			
+			otw_background_video_resize();
+			
+			row_object.imagesLoaded( function(){
+				otw_background_video_resize();
+			} );
+			
+		});
+		jQuery( window ).bind( 'resize', function () {
+			otw_background_video_resize();
+		});
+	};
+};
+
+function otw_background_video_resize(){
+	
+	var otw_bgvideo_elements = jQuery( '.otw-row[data-otwrowbgvideo], .otw-row[data-otwrowbgytvideo], .otw-row[data-otwrowbgvmvideo]' );
+	
+	if( otw_bgvideo_elements.size() ){
+		
+		otw_bgvideo_elements.each( function(){
+			
+			var row_object = jQuery( this );
+			
+			//resize the video
+			var iframe_object = row_object.find( 'div.otw_row_bg_video iframe:first' );
+			
+			if( iframe_object.size() ){
+				
+				var video_size = 'full';
+				
+				if( row_object.attr( 'data-otwrowbgvideosize' ) ){
+					video_size = row_object.attr( 'data-otwrowbgvideosize' );
+				}
+				
+				if( video_size != 'original' ){
+					var row_object_width = row_object.find( 'div.otw_row_bg_video' ).innerWidth();
+					var row_object_height = row_object.find( 'div.otw_row_bg_video' ).innerHeight() + 60;
+				}else{
+					var row_object_width = iframe_object.attr( 'width' );
+					var row_object_height = iframe_object.attr( 'height' );
+				}
+				
+				var ratio1 = 16;
+				var ratio2 =  9;
+				
+				var video_width = 0;
+				var video_height = 0;
+				var video_left = 0;
+				var video_top = 0;
+				
+				if( video_size != 'original' ){
+					
+					if ( ( row_object_width / row_object_height ) < ( ratio1 / ratio2 ) ) {
+						video_width = row_object_height * (ratio1 / ratio2);
+						video_height = row_object_height;
+						
+						video_left = - Math.round( ( video_width - row_object_width ) / 2 ) + 'px';
+						video_top = - Math.round( ( video_height - row_object_height ) / 2 ) + 'px';
+						
+						video_width += 'px';
+						video_height += 'px';
+					} else {
+						
+						video_width = row_object_width;
+						video_height = row_object_width * (ratio2 / ratio1);
+						
+						video_top = - Math.round( ( video_height - row_object_height ) / 2 ) + 'px';
+						video_left = - Math.round( ( video_width - row_object_width ) / 2 ) + 'px';
+						
+						video_width += 'px';
+						video_height += 'px';
+					}
+					row_object.find( 'div.otw_row_bg_video' ).css( 'height', row_object_height + 'px' );
+				}else{
+					video_width = row_object_width;
+					video_height = row_object_height;
+					
+					row_object.find( 'div.otw_row_bg_video' ).css( 'height', row_object_height + 'px' );
+				}
+				
+				
+				iframe_object.css( {
+					maxWidth: '100000%',
+					marginLeft: video_left,
+					marginTop: video_top,
+					width: video_width,
+					height: video_height,
+					top: 0
+				} );
+				
+			};
+		});
+		
+	};
+};
+function otw_set_row_paddings(){
+
+	var otw_padding_elements = jQuery( '.otw-row[data-otwrowpaddingtop]' );
+	
+	if( otw_padding_elements.size() ){
+		
+		otw_padding_elements.each( function(){
+			
+			var row_object = jQuery( this );
+			
+			row_object.css( 'padding-top', row_object.attr( 'data-otwrowpaddingtop' ) + 'px' );
+		});
+	};
+	
+	var otw_padding_elements = jQuery( '.otw-row[data-otwrowpaddingbottom]' );
+	
+	if( otw_padding_elements.size() ){
+		
+		otw_padding_elements.each( function(){
+			
+			var row_object = jQuery( this );
+			
+			row_object.css( 'padding-bottom', row_object.attr( 'data-otwrowpaddingbottom' ) + 'px' );
+		});
+	};
+};
+
+function otw_set_row_parallax(){
+	
+	var otw_parallax_elements = jQuery( '.otw-row[data-otwrowparallax]' );
+	
+	if( otw_parallax_elements.size() && window.skrollr ){
+		
+		var need_skrollr = false;
+		
+		otw_parallax_elements.each( function(){
+			
+			var row_object = jQuery( this );
+			
+			row_object.css( 'overflow', 'hidden' );
+			
+			var parallax_element = row_object.find( '.otw_row_bg_image, .otw_row_bg_video, .otw_row_bg_color' );
+			
+			if( parallax_element.size() ){
+				
+				need_skrollr = true;
+				
+				if( row_object.attr( 'data-otwrowparallax' ) == 'fade' ){
+					row_object.children().first().attr( 'data-5p-top-bottom', 'opacity:0;' ).attr( 'data-30p-top-bottom', 'opacity:1;' );
+				}
+				
+				
+				if( row_object.attr( 'data-otwrowbgvideosize' ) == 'original' ){
+					
+					skrollr_size = 1.5 * 10;
+					skrollr_start = 1.5 * 10;
+					skrollr_end = 0;
+					
+					parallax_element.height( skrollr_size + '%' );
+					
+					skrollrSpeed = skrollr_size - 100;
+					skrollr_start = - skrollrSpeed;
+				}else{
+					skrollr_size = 1.5 * 100;
+					skrollr_start = 1.5 * 100;
+					skrollr_end = 0;
+					
+					parallax_element.height( skrollr_size + '%' );
+					
+					skrollrSpeed = skrollr_size - 100;
+					skrollr_start = - skrollrSpeed;
+				}
+				
+				parallax_element.attr( 'data-bottom-top', 'top: ' + skrollr_start + '%;' ).attr( 'data-top-bottom', 'top: ' + skrollr_end + '%;' );
+			
+			}
+		} );
+		
+		
+		if( need_skrollr ){
+			
+			otw_parallax_elements.imagesLoaded( function(){
+			
+				var otw_parallax_options = {
+					forceHeight: false,
+					smoothScrolling: false,
+					mobileCheck: function () {
+						return false;
+					}
+				};
+				
+				otw_parallax_skroll = skrollr.init( otw_parallax_options );
+				
+				otw_background_video_resize();
+			});
+		};
+	}
+}
+
+function otw_set_row_background_filter(){
+	
+	var otw_filter_elements = jQuery( '.otw-row[data-otwrowbgfilter]' );
+	
+	if( otw_filter_elements.size() ){
+		
+		otw_filter_elements.each( function(){
+			
+			var row_object = jQuery( this );
+			
+			var bg_elements = row_object.find( '.otw_row_bg_image, .otw_row_bg_video, .otw_row_bg_color' );
+			
+			if( bg_elements.size() ){
+				
+				bg_elements.each( function(){
+					
+					if( ( row_object.attr( 'data-otwrowbgfilter' ) == 'color' ) || ( row_object.attr( 'data-otwrowbgfilter' ) == 'gradient' ) ){
+						
+						var bg_node = jQuery( this );
+						
+						var filter_node = bg_node.find( '.otw_row_bg_filter' );
+						
+						if( !filter_node.size() ){
+							filter_node = jQuery( '<div class="otw_row_bg_filter">' );
+							
+							bg_node.append( filter_node );
+						};
+						filter_node.css( {
+							position: 'absolute',
+							display: 'block',
+							top: 0,
+							left: 0,
+							width: '100%',
+							height: '100%',
+							'z-index': 2
+						} );
+						
+						if( row_object.attr( 'data-otwrowbgfilter' ) == 'color' ){
+							
+							if( row_object.attr( 'data-otwrowbgfiltercolor' ) ){
+								filter_node.css( 'background-color', row_object.attr( 'data-otwrowbgfiltercolor' ) );
+							};
+						}
+						if( row_object.attr( 'data-otwrowbgfilteropacity' ) ){
+							filter_node.css( 'opacity', row_object.attr( 'data-otwrowbgfilteropacity' ) );
+						};
+						
+						if( row_object.attr( 'data-otwrowbgfilter' ) == 'gradient' ){
+							
+							if( row_object.attr( 'data-otwrowbgfiltergradient' ) ){
+								
+								switch( row_object.attr( 'data-otwrowbgfiltergradient' ) ){
+								
+									case 'top_bottom':
+											filter_node.css( 'background', 'linear-gradient( to bottom, ' + row_object.attr( 'data-otwrowbgfiltergradientcolor1' ) +  ', ' + row_object.attr( 'data-otwrowbgfiltergradientcolor2' ) + ')' );
+										break;
+									case 'left_right':
+											filter_node.css( 'background', 'linear-gradient( to right, ' + row_object.attr( 'data-otwrowbgfiltergradientcolor1' ) +  ', ' + row_object.attr( 'data-otwrowbgfiltergradientcolor2' ) + ')' );
+										break;
+									case 'diagonal_bottom_right':
+											filter_node.css( 'background', 'linear-gradient( to right bottom, ' + row_object.attr( 'data-otwrowbgfiltergradientcolor1' ) +  ', ' + row_object.attr( 'data-otwrowbgfiltergradientcolor2' ) + ')' );
+										break;
+								}
+							};
+						};
+					};
+				} );
+			};
+		});
+	};
+};
