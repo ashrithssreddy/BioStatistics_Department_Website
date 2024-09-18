@@ -1,4 +1,46 @@
+
 <h2>Master of Science in Biostatistics</h2>
+<p>The <strong>Master of Science in Biostatistics</strong> program is designed to provide students with advanced training in the theory and application of statistical methods in the biomedical and public health sciences. The program prepares graduates for careers in public health, medicine, pharmaceuticals, and academia.</p>
 
-<b> Dummy text:</b> All of the MS degrees provide a route to a career in statistics. Prospective students should note that the MS in statistics, mathematical statistics track and MS in biostatistics degrees provide the best preparation for continuation into the doctoral programs (PhD in statistics or biostatistics) in this department. A student who finishes the applied statistics program can continue into a PhD program upon completion of the core courses for the MS in mathematical statistics or the MS in biostatistics (as given in Tables 4 and 8) and passing the PhD qualifying exams.
+<h3>Program Objectives</h3>
+<ul>
+    <li>Equip students with the statistical tools necessary to analyze complex biological data.</li>
+    <li>Train students to design, implement, and evaluate statistical studies in biomedical research.</li>
+    <li>Provide a strong foundation in probability theory, statistical inference, and biostatistical methodologies.</li>
+</ul>
 
+<h3>Curriculum</h3>
+<p>The MS program is structured to provide both foundational and advanced knowledge in biostatistics. Core courses include:</p>
+<ul>
+    <li><strong>Biostatistical Methods</strong>: In-depth study of statistical methods used in public health and medical research.</li>
+    <li><strong>Statistical Inference</strong>: Theories and methods for drawing conclusions from data.</li>
+    <li><strong>Probability Theory</strong>: Mathematical foundation for modeling random processes.</li>
+    <li><strong>Survival Analysis</strong>: Techniques to model time-to-event data.</li>
+    <li><strong>Clinical Trials Design</strong>: Methods for designing and analyzing randomized clinical trials.</li>
+</ul>
+
+<h3>Sample Courses</h3>
+<ul>
+    <li>BIOSTAT 601: Introduction to Biostatistics</li>
+    <li>BIOSTAT 602: Advanced Regression Analysis</li>
+    <li>BIOSTAT 603: Bayesian Data Analysis</li>
+    <li>BIOSTAT 604: Computational Methods for Big Data</li>
+</ul>
+
+<h3>Research Opportunities</h3>
+<p>Students are encouraged to engage in collaborative research projects with faculty members, which can lead to publications in high-impact journals. Research areas include:</p>
+<ul>
+    <li>Epidemiological studies</li>
+    <li>Genetic data analysis</li>
+    <li>Clinical trial methodology</li>
+    <li>Health outcomes research</li>
+</ul>
+
+<h3>Career Prospects</h3>
+<p>Graduates from the MS program can pursue careers as biostatisticians, data analysts, and research scientists in diverse fields such as:</p>
+<ul>
+    <li>Pharmaceutical companies</li>
+    <li>Government health agencies (e.g., CDC, FDA)</li>
+    <li>Research institutions and universities</li>
+    <li>Hospitals and healthcare organizations</li>
+</ul>

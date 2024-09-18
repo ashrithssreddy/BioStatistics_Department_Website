@@ -1,3 +1,3 @@
-<h6><b>Event 2</b></h6><br>
 
-<p>Our students are drawn from all over the United States and several foreign countries, from both public and private colleges. The placement of our graduates is detailed in the department brochure and on our alumni webpage.</p>
+<h6><b>Data Science Workshop Series</b></h6><br>
+<p>We are excited to announce a new workshop series focused on Data Science in Public Health. Starting January 2024, these workshops will cover topics such as machine learning, data visualization, and statistical modeling. Open to all graduate students and faculty.</p>

@@ -1,3 +1,3 @@
-<h6><b>Announcement 3</b></h6><br>
 
-<p>All of the MS degrees provide a route to a career in statistics. Prospective students should note that the MS in statistics, mathematical statistics track and MS in biostatistics degrees provide the best preparation for continuation into the doctoral programs (PhD in statistics or biostatistics) in this department.</p>
+<h6><b>Upcoming Guest Lecture: Causal Inference in Public Health</b></h6><br>
+<p>The department will host a guest lecture by Dr. John Adams from XYZ University on "Novel Methods in Causal Inference for Public Health." The seminar will be held virtually on October 15th at 3:00 PM. All faculty, students, and staff are invited to attend.</p>

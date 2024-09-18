@@ -1,4 +1,5 @@
 <h2>About Us</h2>
 
-The Department of Statistics at Florida State University was founded in September 1959 under the initiative and direction of Ralph Bradley. Since that time it has become one of the leading statistics departments in the United States. It has been the home at one time or another to many of the pioneers of modern statistics, including Frank Wilcoxon, Richard Savage, Frank Proschan, Jaroslav Hajek, Dev Basu, and Dennis Lindley.
+The Department of Statistics at Florida State University was founded in September 1959 under the leadership of Ralph Bradley. Over the years, it has emerged as a top-ranked statistics department in the United States, contributing to both theoretical and applied statistics. The department has been home to renowned figures in the field, including Frank Wilcoxon, who developed the Wilcoxon signed-rank test, and Richard Savage, known for his contributions to non-parametric statistics and decision theory.
 
+Notable faculty members also include Frank Proschan, Jaroslav Hajek, Dev Basu, and Dennis Lindley, all of whom made groundbreaking contributions to modern statistics. The department continues its legacy of excellence by fostering a collaborative research environment, offering advanced graduate and undergraduate programs, and producing graduates who go on to prominent careers in academia, industry, and government.

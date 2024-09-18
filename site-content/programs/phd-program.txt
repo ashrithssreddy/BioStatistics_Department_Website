@@ -1,3 +1,48 @@
-<h2>PhD in Biostatistics</h2>
 
-<b> Dummy text:</b> All of the PhD degrees provide a route to a career in statistics. Prospective students should note that the MS in statistics, mathematical statistics track and MS in biostatistics degrees provide the best preparation for continuation into the doctoral programs (PhD in statistics or biostatistics) in this department. A student who finishes the applied statistics program can continue into a PhD program upon completion of the core courses for the MS in mathematical statistics or the MS in biostatistics (as given in Tables 4 and 8) and passing the PhD qualifying exams.
+<h2>PhD in Biostatistics</h2>
+<p>Placeholder text: The <strong>PhD in Biostatistics</strong> program is aimed at training students to become independent researchers who can develop new statistical methods and apply them to solve problems in public health and biomedical research. The program focuses on the development of theoretical and applied statistical methodology.</p>
+
+<h3>Program Objectives</h3>
+<ul>
+    <li>Train students to develop innovative statistical methods for analyzing complex data.</li>
+    <li>Prepare students for leadership roles in academia, government, and industry.</li>
+    <li>Develop expertise in the design and analysis of studies related to health, biology, and medicine.</li>
+</ul>
+
+<h3>Curriculum</h3>
+<p>The PhD curriculum provides advanced knowledge in biostatistics, along with a strong emphasis on research. Core courses include:</p>
+<ul>
+    <li><strong>Advanced Statistical Inference</strong>: Rigorous exploration of the principles of statistical inference.</li>
+    <li><strong>Multivariate Analysis</strong>: Methods for analyzing multidimensional datasets.</li>
+    <li><strong>Longitudinal Data Analysis</strong>: Statistical techniques for analyzing data collected over time.</li>
+    <li><strong>Causal Inference</strong>: Methods for understanding causal relationships in observational and experimental studies.</li>
+    <li><strong>Stochastic Processes</strong>: Mathematical models for random processes in biology and medicine.</li>
+</ul>
+
+<h3>Sample Courses</h3>
+<ul>
+    <li>BIOSTAT 701: Theoretical Statistics</li>
+    <li>BIOSTAT 702: Advanced Survival Analysis</li>
+    <li>BIOSTAT 703: Statistical Learning</li>
+    <li>BIOSTAT 704: Causal Inference in Biostatistics</li>
+</ul>
+
+<h3>Research Opportunities</h3>
+<p>PhD students are required to work closely with faculty mentors to conduct original research in the field of biostatistics. Dissertation topics may include:</p>
+<ul>
+    <li>Development of new statistical techniques for genomic data analysis.</li>
+    <li>Advanced methods for missing data imputation.</li>
+    <li>Novel designs for clinical trials.</li>
+</ul>
+
+<h3>Teaching & Assistantships</h3>
+<p>PhD students may have the opportunity to serve as teaching assistants for undergraduate and graduate courses in biostatistics. Additionally, research assistantships are available, offering practical experience in conducting high-level biostatistical research.</p>
+
+<h3>Career Prospects</h3>
+<p>Graduates of the PhD program are prepared for academic positions as professors and researchers, as well as roles in:</p>
+<ul>
+    <li>Biopharmaceutical companies</li>
+    <li>Government health research agencies</li>
+    <li>Healthcare organizations</li>
+    <li>Consulting firms specializing in biostatistics</li>
+</ul>
