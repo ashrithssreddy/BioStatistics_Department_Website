@@ -26,4 +26,4 @@ This repository contains the code and resources for a website I developed as a G
 ### Research
 ![Research Screenshot](docs/research.png)
 ### Software
-![Software Screenshot](docs/software.png)
+![Software Screenshot](docs/software_2.png)
