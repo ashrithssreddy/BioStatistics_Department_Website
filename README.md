@@ -23,7 +23,5 @@ This repository contains the code and resources for a website I developed as a G
 ![Students Screenshot](docs/students.png)
 ### Alumni
 ![Alumni Screenshot](docs/alumni.png)
-### Software
-![Software Screenshot](docs/software.png)
 ### Research
 ![Research Screenshot](docs/research.png)
