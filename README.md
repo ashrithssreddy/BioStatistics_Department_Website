@@ -10,8 +10,20 @@ This repository contains the code and resources for a website I developed as a G
 - **Interactive Tools**: Calculators and visual aids for statistical concepts.
 - **User-Friendly Design**: Accessible layout and navigation.
 
-## Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/ashrithssreddy/website_biostatistics.git
+## Screenshots
+### Homepage
+![Homepage Screenshot](docs/homepage.png)
+### PhD program
+![PhD program Screenshot](docs/phd_program.png)
+### MS Program
+![MS Program Screenshot](docs/ms_program.png)
+### Faculty
+![Faculty Screenshot](docs/faculty.png)
+### Students
+![Students Screenshot](docs/students.png)
+### Alumni
+![Alumni Screenshot](docs/alumni.png)
+### Software
+![Software Screenshot](docs/software.png)
+### Research
+![Research Screenshot](docs/research.png)
